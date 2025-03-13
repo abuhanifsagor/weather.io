@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="sun.gif" type="image/x-icon">
+    <title>Weather - Forecast</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onmouseup="removeClass()" class="h-screen w-full bg-[#F9F9F9] flex justify-center items-center">
+
+    <main  class="min-w-[350px] relative  min-h-[600px]   rounded-2xl p-4">
+        <div class="load opacity-0">
+            <img class="w-52 h-52" src="sun.gif" alt="" srcset="">
+        </div>
+        <div class="notfund flex hidden justify-center items-center ">
+            
+            <div>
+                <button class="btn "><a href="">BACK</a></button>
+            </div>
+        </div>
+        <div class="notfund  hidden justify-center items-center ">
+            
+            
+        </div>
+        <div class="home flex justify-center items-center ">
+
+            <div>
+                <p id="click" class="absolute top-20 left-0 right-0 text-center  text-[#ffffff71]">click <i class="fa-solid fa-arrow-up fly"> </i> on  it</p>
+
+                <h1 class="text-2xl -mt-36 text-[#ffffff] font-bold"> looking for weather 
+                    <br><b class="float-end">-forecast</b>
+                </h1>
+            </div>
+        </div>  
+        <form id="form" onclick="searchBarShow()" class="flex  mx-auto  justify-between items-center">
+            <input id="search" autocomplete="off" class="w-11/12 typewriter outline-none border-none px-3 py-1" type="text" placeholder="Search...">
+            <button id="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+        <div class="flex mt-20 gap-2 items-center">
+            <img class="w-12 h-12"  src="https://img.icons8.com/3d-fluency/94/location.png" alt="location"/>
+            <div>
+                <div class="flex gap-2 items-center">
+                    <h2 id="cityName" class="font-bold  text-2xl  text-[#000000]">Bangladesh</h2>
+                    <div  class="w-8 h-8   overflow-hidden ">
+                        <img id="flag" class="w-full object-cover"  alt="">
+                    </div>
+                </div>
+                <p id="date" class="text-sm font-semibold opacity-55 capitalize">firday, 10 oct </p>
+            </div>
+        </div>
+
+        <div class="temp mt-4  relative">
+            <div class="flex z-10">
+                <h1 id="temperature" class="font-bold text-9xl">19 </h1>
+            <span class="font-bold text-4xl opacity-75" >&#176;C</span>
+            </div>
+            <div class="flex flex-col justify-center items-center -mt-15 -ml-2 z-20">
+                <img id="tempImg" class="w-40 scale-150 h-40" src="" alt="">
+                <p id="weatherDiscription" class="font-bold text-xl mb-5">Sunny</p>
+            </div>
+        </div>
+
+        <div class="  deatis flex items-center gap-3">
+            <div class="box">
+                <p>humidity</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-11 pl-4 h-11 overflow-hidden">
+                        <img src="humidity.gif" alt="">
+                    </div>
+                    <span> <b id="humidity">80</b> %</span>
+                </div>
+            </div>
+            <div class="box boxs">
+                <p>wind speed</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-11 h-11 overflow-hidden">
+                        <img src="wind.gif" alt="">
+                    </div>
+                    <span><b id="wind">50</b>km/h</span>
+                </div>
+            </div>
+        </div>
+        <p class="text-center text-sm  opacity-50 absolute bottom-4 left-1/2 -translate-x-1/2">Thank you for using our service</p>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
