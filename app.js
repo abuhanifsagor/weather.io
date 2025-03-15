@@ -6,6 +6,11 @@ let weatherDiscription = document.getElementById("weatherDiscription");
 let humidity =document.getElementById("humidity");
 let wind =document.getElementById("wind");
 const dataInput = document.getElementById("form");
+const date = document.getElementById('date');
+const options = { year: '2-digit', month: 'short', day: '2-digit' };
+const     dates = new Date();
+const formattedDate = dates.toLocaleDateString('en-GB', options);
+date.innerText = formattedDate;
 
 dataInput.addEventListener("submit", (e)=>{
     e.preventDefault();
